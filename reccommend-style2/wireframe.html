@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InsightX Wireframe - Apple Style</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ========================================
+           Wireframe Styles - Clean & Professional
+           ======================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --wireframe-dark: #2c3e50;
+            --wireframe-medium: #7f8c8d;
+            --wireframe-light: #bdc3c7;
+            --wireframe-bg: #ecf0f1;
+            --wireframe-white: #ffffff;
+            --wireframe-accent: #3498db;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--wireframe-bg);
+            color: var(--wireframe-dark);
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .wireframe-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: var(--wireframe-white);
+            border: 2px solid var(--wireframe-medium);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header Info */
+        .wireframe-header {
+            background: var(--wireframe-dark);
+            color: var(--wireframe-white);
+            padding: 30px 40px;
+            border-bottom: 3px solid var(--wireframe-accent);
+        }
+
+        .wireframe-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .wireframe-subtitle {
+            font-size: 16px;
+            color: var(--wireframe-light);
+            font-weight: 400;
+        }
+
+        /* Section Wrapper */
+        .wireframe-section {
+            padding: 40px;
+            border-bottom: 1px dashed var(--wireframe-light);
+            position: relative;
+        }
+
+        .wireframe-section:last-child {
+            border-bottom: none;
+        }
+
+        .section-label {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: var(--wireframe-accent);
+            color: var(--wireframe-white);
+            padding: 6px 12px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 4px;
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--wireframe-dark);
+            padding-left: 150px;
+        }
+
+        /* Wireframe Elements */
+        .wire-box {
+            background: var(--wireframe-bg);
+            border: 2px dashed var(--wireframe-medium);
+            padding: 20px;
+            margin: 10px 0;
+            position: relative;
+        }
+
+        .wire-box.center {
+            text-align: center;
+        }
+
+        .wire-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: var(--wireframe-white);
+            border: 2px solid var(--wireframe-medium);
+        }
+
+        .wire-logo {
+            width: 120px;
+            height: 30px;
+            background: var(--wireframe-medium);
+            border-radius: 4px;
+        }
+
+        .wire-nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .wire-nav-link {
+            width: 80px;
+            height: 20px;
+            background: var(--wireframe-light);
+            border-radius: 2px;
+        }
+
+        .wire-button {
+            width: 120px;
+            height: 40px;
+            background: var(--wireframe-accent);
+            border-radius: 20px;
+        }
+
+        .wire-button.secondary {
+            background: var(--wireframe-white);
+            border: 2px solid var(--wireframe-accent);
+        }
+
+        /* Hero Section */
+        .wire-hero {
+            text-align: center;
+            padding: 60px 40px;
+        }
+
+        .wire-eyebrow {
+            width: 120px;
+            height: 20px;
+            background: var(--wireframe-light);
+            margin: 0 auto 12px;
+            border-radius: 2px;
+        }
+
+        .wire-title {
+            width: 600px;
+            height: 80px;
+            background: var(--wireframe-dark);
+            margin: 0 auto 12px;
+            border-radius: 4px;
+        }
+
+        .wire-subtitle {
+            width: 500px;
+            height: 60px;
+            background: linear-gradient(90deg, var(--wireframe-accent), #2ecc71);
+            margin: 0 auto 20px;
+            border-radius: 4px;
+        }
+
+        .wire-description {
+            width: 700px;
+            height: 60px;
+            background: var(--wireframe-light);
+            margin: 0 auto 30px;
+            border-radius: 2px;
+        }
+
+        .wire-cta-group {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .wire-image-large {
+            width: 100%;
+            max-width: 1000px;
+            height: 500px;
+            background:
+                repeating-linear-gradient(
+                    45deg,
+                    var(--wireframe-light),
+                    var(--wireframe-light) 10px,
+                    var(--wireframe-bg) 10px,
+                    var(--wireframe-bg) 20px
+                );
+            margin: 40px auto 0;
+            border: 2px solid var(--wireframe-medium);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: var(--wireframe-medium);
+            font-weight: 600;
+        }
+
+        /* Grid Layouts */
+        .wire-grid {
+            display: grid;
+            gap: 24px;
+            margin: 20px 0;
+        }
+
+        .wire-grid.cols-2 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .wire-grid.cols-4 {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .wire-card {
+            background: var(--wireframe-white);
+            border: 2px solid var(--wireframe-medium);
+            padding: 40px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .wire-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--wireframe-accent);
+            margin: 0 auto 16px;
+            border-radius: 50%;
+        }
+
+        .wire-card-title {
+            width: 150px;
+            height: 24px;
+            background: var(--wireframe-dark);
+            margin: 0 auto 12px;
+            border-radius: 2px;
+        }
+
+        .wire-card-text {
+            width: 100%;
+            height: 60px;
+            background: var(--wireframe-light);
+            border-radius: 2px;
+        }
+
+        /* Stats Section */
+        .wire-stats {
+            display: flex;
+            gap: 60px;
+            justify-content: center;
+            margin: 40px 0;
+        }
+
+        .wire-stat {
+            text-align: center;
+        }
+
+        .wire-stat-number {
+            width: 150px;
+            height: 100px;
+            background: linear-gradient(90deg, var(--wireframe-accent), #2ecc71);
+            margin: 0 auto 16px;
+            border-radius: 4px;
+        }
+
+        .wire-stat-label {
+            width: 180px;
+            height: 30px;
+            background: var(--wireframe-dark);
+            margin: 0 auto 8px;
+            border-radius: 2px;
+        }
+
+        .wire-stat-desc {
+            width: 200px;
+            height: 20px;
+            background: var(--wireframe-light);
+            margin: 0 auto;
+            border-radius: 2px;
+        }
+
+        /* Feature Section */
+        .wire-feature {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            margin: 40px 0;
+        }
+
+        .wire-feature.reverse {
+            direction: rtl;
+        }
+
+        .wire-feature.reverse > * {
+            direction: ltr;
+        }
+
+        .wire-feature-content {
+            padding: 20px;
+        }
+
+        .wire-feature-title {
+            width: 300px;
+            height: 48px;
+            background: var(--wireframe-dark);
+            margin-bottom: 16px;
+            border-radius: 2px;
+        }
+
+        .wire-feature-text {
+            width: 100%;
+            height: 100px;
+            background: var(--wireframe-light);
+            border-radius: 2px;
+        }
+
+        .wire-feature-image {
+            width: 100%;
+            height: 300px;
+            background:
+                repeating-linear-gradient(
+                    45deg,
+                    var(--wireframe-light),
+                    var(--wireframe-light) 10px,
+                    var(--wireframe-bg) 10px,
+                    var(--wireframe-bg) 20px
+                );
+            border: 2px solid var(--wireframe-medium);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: var(--wireframe-medium);
+            font-weight: 600;
+        }
+
+        /* Chart Elements */
+        .wire-chart {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            gap: 12px;
+            height: 120px;
+            margin: 20px 0;
+        }
+
+        .wire-chart-bar {
+            width: 40px;
+            background: linear-gradient(180deg, var(--wireframe-accent), #2ecc71);
+            border-radius: 4px;
+        }
+
+        .wire-chart-line {
+            width: 100%;
+            height: 80px;
+            background: linear-gradient(90deg, var(--wireframe-accent), #2ecc71);
+            border-radius: 4px;
+            clip-path: polygon(0 100%, 20% 60%, 40% 70%, 60% 40%, 80% 50%, 100% 20%);
+        }
+
+        /* Footer */
+        .wire-footer {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 60px;
+            padding: 20px;
+        }
+
+        .wire-footer-logo {
+            width: 150px;
+            height: 40px;
+            background: var(--wireframe-dark);
+            border-radius: 4px;
+            margin-bottom: 12px;
+        }
+
+        .wire-footer-links {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .wire-footer-column {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .wire-footer-heading {
+            width: 100px;
+            height: 20px;
+            background: var(--wireframe-dark);
+            border-radius: 2px;
+            margin-bottom: 8px;
+        }
+
+        .wire-footer-link {
+            width: 120px;
+            height: 16px;
+            background: var(--wireframe-light);
+            border-radius: 2px;
+        }
+
+        /* Annotations */
+        .annotation {
+            position: absolute;
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            color: #856404;
+            font-weight: 500;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+        }
+
+        .annotation::before {
+            content: '📌';
+            margin-right: 6px;
+        }
+
+        /* Responsive Toggle */
+        .view-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--wireframe-dark);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            z-index: 100;
+        }
+
+        .view-toggle h3 {
+            color: var(--wireframe-white);
+            font-size: 14px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .toggle-buttons {
+            display: flex;
+            gap: 8px;
+        }
+
+        .toggle-btn {
+            padding: 8px 16px;
+            background: var(--wireframe-white);
+            border: 2px solid var(--wireframe-accent);
+            color: var(--wireframe-accent);
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .toggle-btn:hover,
+        .toggle-btn.active {
+            background: var(--wireframe-accent);
+            color: var(--wireframe-white);
+        }
+
+        /* Mobile View */
+        .wireframe-container.mobile-view {
+            max-width: 375px;
+        }
+
+        .mobile-view .wire-title {
+            width: 100%;
+            height: 60px;
+        }
+
+        .mobile-view .wire-subtitle {
+            width: 100%;
+            height: 50px;
+        }
+
+        .mobile-view .wire-description {
+            width: 100%;
+            height: 80px;
+        }
+
+        .mobile-view .wire-grid.cols-2,
+        .mobile-view .wire-grid.cols-4 {
+            grid-template-columns: 1fr;
+        }
+
+        .mobile-view .wire-feature {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        .mobile-view .wire-stats {
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .mobile-view .wire-footer {
+            grid-template-columns: 1fr;
+        }
+
+        .mobile-view .wire-footer-links {
+            grid-template-columns: 1fr;
+        }
+
+        .mobile-view .wire-nav-links {
+            display: none;
+        }
+
+        /* Measurement Lines */
+        .measurement {
+            position: relative;
+            margin: 20px 0;
+        }
+
+        .measurement::before {
+            content: attr(data-spacing);
+            position: absolute;
+            left: -60px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #e74c3c;
+            font-size: 12px;
+            font-weight: 600;
+            background: var(--wireframe-white);
+            padding: 4px 8px;
+            border-radius: 4px;
+            border: 1px solid #e74c3c;
+        }
+    </style>
+</head>
+<body>
+    <!-- View Toggle -->
+    <div class="view-toggle">
+        <h3>View Mode</h3>
+        <div class="toggle-buttons">
+            <button class="toggle-btn active" onclick="setView('desktop')">Desktop</button>
+            <button class="toggle-btn" onclick="setView('mobile')">Mobile</button>
+        </div>
+    </div>
+
+    <!-- Wireframe Container -->
+    <div class="wireframe-container" id="wireframe">
+
+        <!-- Wireframe Header -->
+        <div class="wireframe-header">
+            <h1 class="wireframe-title">InsightX Website Wireframe</h1>
+            <p class="wireframe-subtitle">Apple-Style Design Structure | SEO & Digital Marketing</p>
+        </div>
+
+        <!-- Section 1: Navigation -->
+        <div class="wireframe-section">
+            <span class="section-label">01 Navigation</span>
+            <h2 class="section-title">Fixed Navigation Bar (44px height)</h2>
+
+            <div class="wire-nav">
+                <div class="wire-logo"></div>
+                <div class="wire-nav-links">
+                    <div class="wire-nav-link"></div>
+                    <div class="wire-nav-link"></div>
+                    <div class="wire-nav-link"></div>
+                    <div class="wire-nav-link"></div>
+                </div>
+                <div class="wire-button"></div>
+            </div>
+
+            <div class="annotation" style="top: 80px; right: 40px;">
+                ใช้ backdrop-filter blur สำหรับ glassmorphism effect
+            </div>
+        </div>
+
+        <!-- Section 2: Hero -->
+        <div class="wireframe-section">
+            <span class="section-label">02 Hero</span>
+            <h2 class="section-title">Hero Section (100px padding top)</h2>
+
+            <div class="wire-hero">
+                <div class="wire-eyebrow"></div>
+                <div class="wire-title"></div>
+                <div class="wire-subtitle"></div>
+                <div class="wire-description"></div>
+
+                <div class="wire-cta-group">
+                    <div class="wire-button"></div>
+                    <div class="wire-button secondary"></div>
+                </div>
+
+                <div class="measurement" data-spacing="60px"></div>
+
+                <div class="wire-image-large">HERO IMAGE<br>1200 x 500px</div>
+            </div>
+
+            <div class="annotation" style="top: 120px; left: 40px;">
+                Title: 56px font-size<br>
+                Line-height: 1.07<br>
+                Letter-spacing: -0.005em
+            </div>
+
+            <div class="annotation" style="bottom: 80px; right: 40px;">
+                Image มี border-radius 28px<br>
+                และ subtle parallax effect
+            </div>
+        </div>
+
+        <!-- Section 3: Highlights -->
+        <div class="wireframe-section" style="background: var(--wireframe-bg);">
+            <span class="section-label">03 Highlights</span>
+            <h2 class="section-title">Highlights Grid (80px padding)</h2>
+
+            <div class="wire-box center">
+                <div style="width: 400px; height: 48px; background: var(--wireframe-dark); margin: 0 auto 40px; border-radius: 2px;"></div>
+            </div>
+
+            <div class="wire-grid cols-2">
+                <div class="wire-card">
+                    <div class="wire-icon"></div>
+                    <div class="wire-card-title"></div>
+                    <div class="wire-card-text"></div>
+                </div>
+                <div class="wire-card">
+                    <div class="wire-icon"></div>
+                    <div class="wire-card-title"></div>
+                    <div class="wire-card-text"></div>
+                </div>
+                <div class="wire-card">
+                    <div class="wire-icon"></div>
+                    <div class="wire-card-title"></div>
+                    <div class="wire-card-text"></div>
+                </div>
+                <div class="wire-card">
+                    <div class="wire-icon"></div>
+                    <div class="wire-card-title"></div>
+                    <div class="wire-card-text"></div>
+                </div>
+            </div>
+
+            <div class="annotation" style="top: 100px; right: 40px;">
+                Grid: 2 columns<br>
+                Gap: 24px<br>
+                Cards มี hover effect
+            </div>
+        </div>
+
+        <!-- Section 4: Performance -->
+        <div class="wireframe-section">
+            <span class="section-label">04 Performance</span>
+            <h2 class="section-title">Performance Stats (100px padding)</h2>
+
+            <div class="wire-box center">
+                <div style="width: 150px; height: 20px; background: var(--wireframe-light); margin: 0 auto 12px; border-radius: 2px;"></div>
+                <div style="width: 500px; height: 60px; background: var(--wireframe-dark); margin: 0 auto 16px; border-radius: 2px;"></div>
+                <div style="width: 600px; height: 50px; background: var(--wireframe-light); margin: 0 auto; border-radius: 2px;"></div>
+            </div>
+
+            <div class="wire-stats">
+                <div class="wire-stat">
+                    <div class="wire-stat-number"></div>
+                    <div class="wire-stat-label"></div>
+                    <div class="wire-stat-desc"></div>
+                </div>
+                <div class="wire-stat">
+                    <div class="wire-stat-number"></div>
+                    <div class="wire-stat-label"></div>
+                    <div class="wire-stat-desc"></div>
+                </div>
+            </div>
+
+            <div class="measurement" data-spacing="60px"></div>
+
+            <div class="wire-box center">
+                <div class="wire-image-large">PERFORMANCE IMAGE<br>1200 x 600px</div>
+            </div>
+
+            <div class="annotation" style="top: 200px; left: 40px;">
+                Stats มี counter animation<br>
+                ขนาดตัวเลข: 80px<br>
+                Font-weight: 600
+            </div>
+        </div>
+
+        <!-- Section 5: Features -->
+        <div class="wireframe-section" style="background: var(--wireframe-bg);">
+            <span class="section-label">05 Features</span>
+            <h2 class="section-title">Features Sections (100px padding)</h2>
+
+            <div class="wire-box center">
+                <div style="width: 150px; height: 20px; background: var(--wireframe-light); margin: 0 auto 12px; border-radius: 2px;"></div>
+                <div style="width: 450px; height: 50px; background: var(--wireframe-dark); margin: 0 auto; border-radius: 2px;"></div>
+            </div>
+
+            <div class="measurement" data-spacing="80px"></div>
+
+            <!-- Feature 1 -->
+            <div class="wire-feature">
+                <div class="wire-feature-content">
+                    <div class="wire-feature-title"></div>
+                    <div class="wire-feature-text"></div>
+                </div>
+                <div class="wire-feature-image">FEATURE IMAGE<br>800 x 300px</div>
+            </div>
+
+            <div class="measurement" data-spacing="80px"></div>
+
+            <!-- Feature 2 (Reversed) -->
+            <div class="wire-feature reverse">
+                <div class="wire-feature-content">
+                    <div class="wire-feature-title"></div>
+                    <div class="wire-feature-text"></div>
+                </div>
+                <div class="wire-feature-image">FEATURE IMAGE<br>800 x 300px</div>
+            </div>
+
+            <div class="annotation" style="top: 150px; right: 40px;">
+                Features สลับซ้าย-ขวา<br>
+                Grid: 1fr 1fr<br>
+                Gap: 80px
+            </div>
+        </div>
+
+        <!-- Section 6: Results -->
+        <div class="wireframe-section">
+            <span class="section-label">06 Results</span>
+            <h2 class="section-title">Results with Charts (100px padding)</h2>
+
+            <div class="wire-box center">
+                <div style="width: 150px; height: 20px; background: var(--wireframe-light); margin: 0 auto 12px; border-radius: 2px;"></div>
+                <div style="width: 500px; height: 60px; background: var(--wireframe-dark); margin: 0 auto; border-radius: 2px;"></div>
+            </div>
+
+            <div class="measurement" data-spacing="60px"></div>
+
+            <div class="wire-grid cols-2">
+                <div class="wire-card">
+                    <div class="wire-chart">
+                        <div class="wire-chart-bar" style="height: 100%;"></div>
+                        <div class="wire-chart-bar" style="height: 65%;"></div>
+                        <div class="wire-chart-bar" style="height: 80%;"></div>
+                        <div class="wire-chart-bar" style="height: 95%;"></div>
+                    </div>
+                    <div class="wire-card-title"></div>
+                    <div class="wire-card-text"></div>
+                    <div style="width: 150px; height: 40px; background: linear-gradient(90deg, var(--wireframe-accent), #2ecc71); margin: 16px auto 0; border-radius: 2px;"></div>
+                </div>
+                <div class="wire-card">
+                    <div class="wire-chart">
+                        <div class="wire-chart-line"></div>
+                    </div>
+                    <div class="wire-card-title"></div>
+                    <div class="wire-card-text"></div>
+                    <div style="width: 150px; height: 40px; background: linear-gradient(90deg, var(--wireframe-accent), #2ecc71); margin: 16px auto 0; border-radius: 2px;"></div>
+                </div>
+            </div>
+
+            <div class="annotation" style="bottom: 80px; left: 40px;">
+                Chart bars มี animation<br>
+                สูงขึ้นเมื่อ scroll เข้า viewport
+            </div>
+        </div>
+
+        <!-- Section 7: CTA -->
+        <div class="wireframe-section" style="background: var(--wireframe-bg);">
+            <span class="section-label">07 CTA</span>
+            <h2 class="section-title">Call to Action (120px padding)</h2>
+
+            <div class="wire-box center">
+                <div style="width: 500px; height: 60px; background: var(--wireframe-dark); margin: 0 auto 16px; border-radius: 2px;"></div>
+                <div style="width: 600px; height: 60px; background: var(--wireframe-light); margin: 0 auto 32px; border-radius: 2px;"></div>
+
+                <div class="wire-cta-group">
+                    <div class="wire-button" style="width: 160px; height: 50px;"></div>
+                    <div class="wire-button secondary" style="width: 160px; height: 50px;"></div>
+                </div>
+            </div>
+
+            <div class="annotation" style="top: 100px; right: 40px;">
+                Large buttons<br>
+                Padding: 16px 32px<br>
+                Font-size: 19px
+            </div>
+        </div>
+
+        <!-- Section 8: Footer -->
+        <div class="wireframe-section" style="background: var(--wireframe-bg);">
+            <span class="section-label">08 Footer</span>
+            <h2 class="section-title">Footer (40px padding)</h2>
+
+            <div class="wire-footer">
+                <div>
+                    <div class="wire-footer-logo"></div>
+                    <div style="width: 200px; height: 16px; background: var(--wireframe-light); border-radius: 2px;"></div>
+                </div>
+                <div class="wire-footer-links">
+                    <div class="wire-footer-column">
+                        <div class="wire-footer-heading"></div>
+                        <div class="wire-footer-link"></div>
+                        <div class="wire-footer-link"></div>
+                        <div class="wire-footer-link"></div>
+                        <div class="wire-footer-link"></div>
+                    </div>
+                    <div class="wire-footer-column">
+                        <div class="wire-footer-heading"></div>
+                        <div class="wire-footer-link"></div>
+                        <div class="wire-footer-link"></div>
+                        <div class="wire-footer-link"></div>
+                    </div>
+                    <div class="wire-footer-column">
+                        <div class="wire-footer-heading"></div>
+                        <div class="wire-footer-link"></div>
+                        <div class="wire-footer-link"></div>
+                        <div class="wire-footer-link"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="measurement" data-spacing="40px"></div>
+
+            <div class="wire-box center">
+                <div style="width: 300px; height: 16px; background: var(--wireframe-light); margin: 0 auto; border-radius: 2px;"></div>
+            </div>
+
+            <div class="annotation" style="bottom: 80px; right: 40px;">
+                Footer แบ่งเป็น 2 columns<br>
+                Grid: 1fr 2fr
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function setView(view) {
+            const container = document.getElementById('wireframe');
+            const buttons = document.querySelectorAll('.toggle-btn');
+
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            if (view === 'mobile') {
+                container.classList.add('mobile-view');
+            } else {
+                container.classList.remove('mobile-view');
+            }
+        }
+    </script>
+</body>
+</html>

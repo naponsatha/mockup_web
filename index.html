@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mockup Templates Gallery</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            padding: 40px 20px;
+            position: relative;
+            background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.50);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            color: white;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .templates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .template-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            border: 2px solid transparent;
+        }
+
+        .template-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 48px rgba(229,62,62,0.2);
+            border: 2px solid #e53e3e;
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+            padding: 20px;
+            color: white;
+            text-align: center;
+            border-bottom: 3px solid #e53e3e;
+        }
+
+        .card-number {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #2d3748;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: white;
+            font-weight: 500;
+        }
+
+        .view-link {
+            color: #e53e3e;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .arrow {
+            transition: transform 0.3s ease;
+        }
+
+        .template-card:hover .arrow {
+            transform: translateX(5px);
+        }
+
+        footer {
+            text-align: center;
+            color: white;
+            margin-top: 50px;
+            opacity: 0.9;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .templates-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Website Portfolio</h1>
+            <p class="subtitle">Professional Web Design Solutions | Advertising Agency</p>
+        </header>
+
+        <div class="templates-grid">
+            <!-- Style Templates -->
+            <a href="./a-style/index.html" class="template-card">
+                <div class="card-header">
+                    <div class="card-number">#1</div>
+                    <div class="card-title">A-Style Template</div>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">Template แบบ A พร้อมดีไซน์สไตล์โมเดิร์นและเรียบหรู</p>
+                    <div class="card-footer">
+                        <span class="tag">Style</span>
+                        <span class="view-link">ดูเพิ่มเติม <span class="arrow">→</span></span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="./b-style/index.html" class="template-card">
+                <div class="card-header">
+                    <div class="card-number">#2</div>
+                    <div class="card-title">B-Style Template</div>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">Template แบบ B ออกแบบสำหรับธุรกิจและองค์กร</p>
+                    <div class="card-footer">
+                        <span class="tag">Style</span>
+                        <span class="view-link">ดูเพิ่มเติม <span class="arrow">→</span></span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="./c-style/index.html" class="template-card">
+                <div class="card-header">
+                    <div class="card-number">#3</div>
+                    <div class="card-title">C-Style Template</div>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">Template แบบ C เน้นความเรียบง่ายและใช้งานง่าย</p>
+                    <div class="card-footer">
+                        <span class="tag">Style</span>
+                        <span class="view-link">ดูเพิ่มเติม <span class="arrow">→</span></span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="./d-style/index.html" class="template-card">
+                <div class="card-header">
+                    <div class="card-number">#4</div>
+                    <div class="card-title">D-Style Template</div>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">Template แบบ D สไตล์สดใสและทันสมัย</p>
+                    <div class="card-footer">
+                        <span class="tag">Style</span>
+                        <span class="view-link">ดูเพิ่มเติม <span class="arrow">→</span></span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Recommend Templates -->
+            <a href="./reccommend-style1/index.html" class="template-card">
+                <div class="card-header">
+                    <div class="card-number">#5</div>
+                    <div class="card-title">Recommend Style 1</div>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">Template แนะนำแบบที่ 1 พร้อมฟีเจอร์ครบครัน</p>
+                    <div class="card-footer">
+                        <span class="tag">Recommend</span>
+                        <span class="view-link">ดูเพิ่มเติม <span class="arrow">→</span></span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="./reccommend-style2/index.html" class="template-card">
+                <div class="card-header">
+                    <div class="card-number">#6</div>
+                    <div class="card-title">Recommend Style 2</div>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">Template แนะนำแบบที่ 2 ดีไซน์โดดเด่น</p>
+                    <div class="card-footer">
+                        <span class="tag">Recommend</span>
+                        <span class="view-link">ดูเพิ่มเติม <span class="arrow">→</span></span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="./reccommend-style3/index.html" class="template-card">
+                <div class="card-header">
+                    <div class="card-number">#7</div>
+                    <div class="card-title">Recommend Style 3</div>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">Template แนะนำแบบที่ 3 เหมาะกับทุกธุรกิจ</p>
+                    <div class="card-footer">
+                        <span class="tag">Recommend</span>
+                        <span class="view-link">ดูเพิ่มเติม <span class="arrow">→</span></span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Special Templates -->
+            <a href="./coffee-shop/index.html" class="template-card">
+                <div class="card-header">
+                    <div class="card-number">#8</div>
+                    <div class="card-title">Coffee Shop</div>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">Template สำหรับร้านกาแฟและคาเฟ่</p>
+                    <div class="card-footer">
+                        <span class="tag">Business</span>
+                        <span class="view-link">ดูเพิ่มเติม <span class="arrow">→</span></span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="./ezo-rental/index.html" class="template-card">
+                <div class="card-header">
+                    <div class="card-number">#9</div>
+                    <div class="card-title">EZO Rental</div>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">Template สำหรับธุรกิจให้เช่าและบริการ</p>
+                    <div class="card-footer">
+                        <span class="tag">Business</span>
+                        <span class="view-link">ดูเพิ่มเติม <span class="arrow">→</span></span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="./landingpage-mateor-offer/index.html" class="template-card">
+                <div class="card-header">
+                    <div class="card-number">#10</div>
+                    <div class="card-title">Mateor Offer Landing</div>
+                </div>
+                <div class="card-body">
+                    <p class="card-description">Landing page สำหรับโปรโมชั่นและข้อเสนอพิเศษ</p>
+                    <div class="card-footer">
+                        <span class="tag">Landing Page</span>
+                        <span class="view-link">ดูเพิ่มเติม <span class="arrow">→</span></span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <footer>
+            <p>10 Professional Templates | Crafted for Excellence</p>
+        </footer>
+    </div>
+</body>
+</html>

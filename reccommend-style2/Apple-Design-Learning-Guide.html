@@ -1,0 +1,1372 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple Design Learning Guide - InsightX Study Document</title>
+    <style>
+        /* Print-friendly CSS for PDF conversion */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Kanit:wght@400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Kanit', 'Inter', sans-serif;
+            line-height: 1.8;
+            color: #1d1d1f;
+            background: #ffffff;
+            padding: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            background: linear-gradient(90deg, #0071e3, #00c3ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        h2 {
+            font-size: 36px;
+            font-weight: 600;
+            margin: 40px 0 20px;
+            color: #1d1d1f;
+            border-bottom: 3px solid #0071e3;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            font-size: 28px;
+            font-weight: 600;
+            margin: 30px 0 15px;
+            color: #0071e3;
+        }
+
+        h4 {
+            font-size: 22px;
+            font-weight: 600;
+            margin: 20px 0 10px;
+            color: #1d1d1f;
+        }
+
+        p {
+            margin-bottom: 16px;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .cover {
+            text-align: center;
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f5f5f7 0%, #e8e8ed 100%);
+            border-radius: 20px;
+            margin-bottom: 60px;
+        }
+
+        .cover h1 {
+            font-size: 64px;
+            margin-bottom: 20px;
+        }
+
+        .cover .subtitle {
+            font-size: 28px;
+            color: #86868b;
+            margin-bottom: 10px;
+        }
+
+        .cover .author {
+            font-size: 18px;
+            color: #86868b;
+            margin-top: 40px;
+        }
+
+        .section {
+            margin-bottom: 60px;
+            page-break-inside: avoid;
+        }
+
+        .comment {
+            background: #f5f5f7;
+            border-left: 4px solid #0071e3;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .comment-title {
+            font-weight: 600;
+            color: #0071e3;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .code-block {
+            background: #1d1d1f;
+            color: #f5f5f7;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.6;
+            overflow-x: auto;
+        }
+
+        .code-comment {
+            color: #86868b;
+            font-style: italic;
+        }
+
+        .highlight {
+            background: #fff3cd;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .example-box {
+            border: 2px solid #0071e3;
+            border-radius: 12px;
+            padding: 24px;
+            margin: 20px 0;
+            background: #f5f5f7;
+        }
+
+        .do-dont {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .do {
+            background: #d4edda;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+        }
+
+        .dont {
+            background: #f8d7da;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #dc3545;
+        }
+
+        .do h4::before {
+            content: "✓ ";
+            color: #28a745;
+        }
+
+        .dont h4::before {
+            content: "✗ ";
+            color: #dc3545;
+        }
+
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            line-height: 1.8;
+        }
+
+        .stats-box {
+            background: linear-gradient(135deg, #0071e3 0%, #00c3ff 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .stats-box h3 {
+            color: white;
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            border: 1px solid #e8e8ed;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background: #f5f5f7;
+            font-weight: 600;
+        }
+
+        .toc {
+            background: #f5f5f7;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 40px 0;
+        }
+
+        .toc h2 {
+            border: none;
+            margin-top: 0;
+        }
+
+        .toc ul {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .toc li {
+            margin-bottom: 8px;
+        }
+
+        .toc a {
+            color: #0071e3;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .toc a:hover {
+            text-decoration: underline;
+        }
+
+        @media print {
+            body {
+                padding: 20px;
+            }
+
+            .section {
+                page-break-inside: avoid;
+            }
+
+            h2 {
+                page-break-before: always;
+            }
+
+            h2:first-of-type {
+                page-break-before: avoid;
+            }
+        }
+
+        .visual-example {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .footer-note {
+            text-align: center;
+            padding: 40px;
+            background: #f5f5f7;
+            border-radius: 12px;
+            margin-top: 60px;
+            font-size: 14px;
+            color: #86868b;
+        }
+    </style>
+</head>
+<body>
+    <!-- Cover Page -->
+    <div class="cover">
+        <h1>🍎 Apple Design<br>Learning Guide</h1>
+        <p class="subtitle">การวิเคราะห์และเรียนรู้การออกแบบจาก Apple</p>
+        <p class="subtitle">สำหรับ InsightX Project</p>
+        <p class="author">Created for Educational Purposes<br>December 2024</p>
+    </div>
+
+    <!-- Table of Contents -->
+    <div class="toc">
+        <h2>📑 สารบัญ</h2>
+        <ul>
+            <li><a href="#intro">1. บทนำ - ทำไมต้องเรียนรู้จาก Apple</a></li>
+            <li><a href="#design-principles">2. หลักการออกแบบของ Apple (Design Principles)</a></li>
+            <li><a href="#typography">3. Typography - การใช้ตัวอักษร</a></li>
+            <li><a href="#color">4. Color Scheme - ระบบสี</a></li>
+            <li><a href="#layout">5. Layout & White Space</a></li>
+            <li><a href="#copywriting">6. Copywriting Techniques</a></li>
+            <li><a href="#animations">7. Animations & Interactions</a></li>
+            <li><a href="#code-examples">8. ตัวอย่างโค้ดพร้อม Comments</a></li>
+            <li><a href="#ux-patterns">9. UX Patterns ที่เด็ด</a></li>
+            <li><a href="#responsive">10. Responsive Design Strategy</a></li>
+            <li><a href="#summary">11. สรุปและการนำไปใช้</a></li>
+        </ul>
+    </div>
+
+    <!-- Section 1: Introduction -->
+    <div class="section" id="intro">
+        <h2>1. บทนำ - ทำไมต้องเรียนรู้จาก Apple?</h2>
+
+        <p>Apple เป็นหนึ่งในบริษัทที่มีการออกแบบเว็บไซต์และ UI/UX ที่ดีที่สุดในโลก ทุกปีพวกเขาใช้งบประมาณหลายล้านดอลลาร์ในการวิจัยและพัฒนาการออกแบบ</p>
+
+        <div class="comment">
+            <div class="comment-title">💡 สิ่งที่ทำให้ Apple พิเศษ:</div>
+            <ul>
+                <li><strong>Minimalism</strong> - ลดทุกอย่างจนเหลือแต่สิ่งสำคัญ</li>
+                <li><strong>Consistency</strong> - ทุกอย่างสอดคล้องกันทั้งระบบ</li>
+                <li><strong>Quality</strong> - ใส่ใจในรายละเอียดทุกพิกเซล</li>
+                <li><strong>User-Centric</strong> - คิดจากมุมของผู้ใช้เป็นหลัก</li>
+            </ul>
+        </div>
+
+        <div class="stats-box">
+            <h3>$274 Billion</h3>
+            <p>มูลค่าแบรนด์ Apple ในปี 2024<br>มากที่สุดในโลก</p>
+        </div>
+
+        <p>เมื่อเราเรียนรู้จาก Apple เราไม่ได้ copy โค้ดของเขา แต่เราเรียนรู้ <span class="highlight">หลักการคิด</span> และ <span class="highlight">เทคนิคการออกแบบ</span> ที่ทำให้เว็บไซต์ดูดีและใช้งานง่าย</p>
+    </div>
+
+    <!-- Section 2: Design Principles -->
+    <div class="section" id="design-principles">
+        <h2>2. หลักการออกแบบของ Apple (Design Principles)</h2>
+
+        <h3>2.1 Minimalism - ลดทุกอย่างจนเหลือแค่สิ่งสำคัญ</h3>
+
+        <p>Apple เชื่อว่า "Less is More" - ยิ่งมีน้อย ยิ่งดี</p>
+
+        <div class="do-dont">
+            <div class="do">
+                <h4>DO - ทำแบบนี้</h4>
+                <ul>
+                    <li>ใช้สีไม่เกิน 3 สี</li>
+                    <li>มี white space เยอะ</li>
+                    <li>ข้อความสั้นกระชับ</li>
+                    <li>แต่ละ section มี focus เดียว</li>
+                </ul>
+            </div>
+            <div class="dont">
+                <h4>DON'T - อย่าทำแบบนี้</h4>
+                <ul>
+                    <li>ใช้สีฉูดฉาดมากมาย</li>
+                    <li>ยัดเยียดข้อมูลเต็มหน้า</li>
+                    <li>มี element หลายอย่างในที่เดียว</li>
+                    <li>ใช้ font หลายๆ แบบ</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="comment">
+            <div class="comment-title">📝 Comment - เรียนรู้อะไรได้บ้าง:</div>
+            <p><strong>Minimalism ไม่ใช่แค่ "ลด"</strong> - มันคือการเลือกว่าอะไรสำคัญจริงๆ และกล้าที่จะตัดสิ่งที่ไม่จำเป็นออก</p>
+            <p>ในกรณีของ InsightX เราเรียนรู้ว่า:</p>
+            <ul>
+                <li>แทนที่จะใส่บริการ 10 อย่าง ใส่แค่ 4 อย่างหลักๆ</li>
+                <li>แทนที่จะอธิบายยาว ใช้ตัวเลข "100%" ดูง่ายกว่า</li>
+                <li>แทนที่จะมีหลายๆ CTA ใช้แค่ 2 ปุ่ม</li>
+            </ul>
+        </div>
+
+        <h3>2.2 White Space - พื้นที่ว่างคือสิ่งสำคัญ</h3>
+
+        <p>Apple ใช้ white space มากกว่าเว็บไซต์ทั่วไปถึง 2-3 เท่า</p>
+
+        <div class="example-box">
+            <h4>ตัวอย่างการใช้ White Space:</h4>
+            <table>
+                <tr>
+                    <th>Element</th>
+                    <th>Spacing (Apple)</th>
+                    <th>Spacing (ทั่วไป)</th>
+                </tr>
+                <tr>
+                    <td>Section Padding</td>
+                    <td>100px - 120px</td>
+                    <td>40px - 60px</td>
+                </tr>
+                <tr>
+                    <td>Line Height</td>
+                    <td>1.47 - 1.8</td>
+                    <td>1.4 - 1.6</td>
+                </tr>
+                <tr>
+                    <td>Paragraph Margin</td>
+                    <td>24px - 32px</td>
+                    <td>16px - 20px</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="comment">
+            <div class="comment-title">💭 ทำไม White Space ถึงสำคัญ:</div>
+            <ol>
+                <li><strong>ให้ Content หายใจได้</strong> - ข้อความไม่ติดกัน อ่านง่ายขึ้น</li>
+                <li><strong>สร้างความโดดเด่น</strong> - เมื่อรอบๆ มีพื้นที่ว่าง content ดูเด่นขึ้น</li>
+                <li><strong>ดูหรูหรา</strong> - แบรนด์ luxury มักใช้ white space เยอะ</li>
+                <li><strong>ลด Cognitive Load</strong> - สมองประมวลผลง่ายขึ้น</li>
+            </ol>
+        </div>
+
+        <h3>2.3 Consistency - ความสม่ำเสมอ</h3>
+
+        <p>ทุกอย่างใน Apple ต้องสอดคล้องกัน - สี, ขนาด, spacing, animation</p>
+
+        <div class="code-block">
+<span class="code-comment">/* CSS Variables ทำให้มั่นใจว่าทุกอย่างสม่ำเสมอ */</span>
+:root {
+    <span class="code-comment">/* สีที่ใช้ซ้ำไปทั้งเว็บ */</span>
+    --apple-black: #1d1d1f;
+    --apple-gray: #86868b;
+    --apple-blue: #0071e3;
+
+    <span class="code-comment">/* ขนาด font ที่กำหนดไว้ */</span>
+    --font-size-hero: 56px;
+    --font-size-heading: 48px;
+    --font-size-body: 21px;
+
+    <span class="code-comment">/* Spacing system */</span>
+    --space-sm: 20px;
+    --space-md: 40px;
+    --space-lg: 80px;
+    --space-xl: 120px;
+}
+        </div>
+
+        <div class="comment">
+            <div class="comment-title">🎯 สิ่งที่เรียนรู้:</div>
+            <p>การใช้ CSS Variables ช่วยให้:</p>
+            <ul>
+                <li>เปลี่ยนสีทีเดียวได้ทั้งเว็บ</li>
+                <li>ปรับ spacing ง่ายขึ้น</li>
+                <li>ทีมทำงานร่วมกันได้ดีขึ้น (รู้ว่าใช้ค่าอะไร)</li>
+                <li>Maintain ง่าย</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Section 3: Typography -->
+    <div class="section" id="typography">
+        <h2>3. Typography - การใช้ตัวอักษร</h2>
+
+        <h3>3.1 Font Family</h3>
+
+        <p>Apple ใช้ฟอนต์ <strong>San Francisco</strong> (ที่พัฒนาเอง) แต่เราใช้ <strong>Inter</strong> ซึ่งคล้ายกันมาก</p>
+
+        <div class="visual-example">
+            <h1 style="font-size: 56px; font-weight: 600; margin-bottom: 16px;">InsightX</h1>
+            <p style="font-size: 21px; color: #86868b;">ตัวอักษรใหญ่ นน่ำหนักไม่หนักเกิน อ่านง่าย</p>
+        </div>
+
+        <h3>3.2 Type Scale - ขนาดตัวอักษร</h3>
+
+        <div class="example-box">
+            <h4>Apple Typography Scale:</h4>
+            <table>
+                <tr>
+                    <th>Element</th>
+                    <th>Font Size</th>
+                    <th>Font Weight</th>
+                    <th>Line Height</th>
+                    <th>Letter Spacing</th>
+                </tr>
+                <tr>
+                    <td>Hero Title</td>
+                    <td>56px</td>
+                    <td>600</td>
+                    <td>1.07</td>
+                    <td>-0.005em</td>
+                </tr>
+                <tr>
+                    <td>Section Heading</td>
+                    <td>48px</td>
+                    <td>600</td>
+                    <td>1.08</td>
+                    <td>-0.003em</td>
+                </tr>
+                <tr>
+                    <td>Feature Title</td>
+                    <td>40px</td>
+                    <td>600</td>
+                    <td>1.1</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>Body Text</td>
+                    <td>21px</td>
+                    <td>400</td>
+                    <td>1.38</td>
+                    <td>0.011em</td>
+                </tr>
+                <tr>
+                    <td>Caption</td>
+                    <td>17px</td>
+                    <td>400</td>
+                    <td>1.47</td>
+                    <td>-0.022em</td>
+                </tr>
+                <tr>
+                    <td>Small Text</td>
+                    <td>12px</td>
+                    <td>400</td>
+                    <td>1.33</td>
+                    <td>-0.01em</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="comment">
+            <div class="comment-title">📐 สังเกตเห็นอะไรบ้าง:</div>
+            <ul>
+                <li><strong>ตัวอักษรใหญ่มาก</strong> - Hero 56px ใหญ่กว่าเว็บทั่วไป (32-40px)</li>
+                <li><strong>Body text ใหญ่</strong> - 21px ทำให้อ่านง่าย (ปกติใช้ 16px)</li>
+                <li><strong>Letter spacing เป็นลบ</strong> - ตัวใหญ่ใช้ spacing ลบเพื่อให้ดูกระชับ</li>
+                <li><strong>Line height เยอะ</strong> - 1.47 ทำให้ข้อความไม่ติดกัน</li>
+            </ul>
+        </div>
+
+        <h3>3.3 Hierarchy - ลำดับความสำคัญ</h3>
+
+        <p>Apple สร้าง hierarchy ชัดเจนมากด้วยวิธีนี้:</p>
+
+        <div class="code-block">
+<span class="code-comment">/* Hero - ดึงดูดความสนใจก่อน */</span>
+.hero-title {
+    font-size: 56px;
+    font-weight: 600;
+    <span class="code-comment">/* ใหญ่มาก สายตาไปที่นี่ก่อน */</span>
+}
+
+<span class="code-comment">/* Description - อ่านต่อ */</span>
+.hero-description {
+    font-size: 21px;
+    font-weight: 400;
+    color: #86868b;  <span class="code-comment">/* สีเทา = ความสำคัญรอง */</span>
+}
+
+<span class="code-comment">/* Caption - อ่านสุดท้าย */</span>
+.hero-footnote {
+    font-size: 12px;
+    color: #86868b;
+    <span class="code-comment">/* เล็กที่สุด = ข้อมูลเสริม */</span>
+}
+        </div>
+
+        <div class="comment">
+            <div class="comment-title">🎓 Lesson Learned:</div>
+            <p><strong>Hierarchy ทำด้วย 3 วิธี:</strong></p>
+            <ol>
+                <li><strong>Size</strong> - ใหญ่ = สำคัญ</li>
+                <li><strong>Weight</strong> - หนา = เด่น</li>
+                <li><strong>Color</strong> - ดำ = สำคัญ, เทา = รอง</li>
+            </ol>
+            <p>ไม่จำเป็นต้องใช้ทั้ง 3 วิธี ใช้ 2 วิธีก็พอ (ตัวอย่าง: ขนาด + สี)</p>
+        </div>
+    </div>
+
+    <!-- Section 4: Color Scheme -->
+    <div class="section" id="color">
+        <h2>4. Color Scheme - ระบบสี</h2>
+
+        <h3>4.1 Apple's Color Palette</h3>
+
+        <p>Apple ใช้สีน้อยมาก แต่ใช้เป็น</p>
+
+        <div class="example-box">
+            <h4>สีหลักที่ Apple ใช้:</h4>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 20px;">
+                <div style="text-align: center;">
+                    <div style="width: 100%; height: 100px; background: #1d1d1f; border-radius: 8px; margin-bottom: 10px;"></div>
+                    <strong>#1d1d1f</strong><br>
+                    <small>Apple Black</small>
+                </div>
+                <div style="text-align: center;">
+                    <div style="width: 100%; height: 100px; background: #86868b; border-radius: 8px; margin-bottom: 10px;"></div>
+                    <strong>#86868b</strong><br>
+                    <small>Apple Gray</small>
+                </div>
+                <div style="text-align: center;">
+                    <div style="width: 100%; height: 100px; background: #f5f5f7; border-radius: 8px; margin-bottom: 10px;"></div>
+                    <strong>#f5f5f7</strong><br>
+                    <small>Apple Light Gray</small>
+                </div>
+                <div style="text-align: center;">
+                    <div style="width: 100%; height: 100px; background: #ffffff; border-radius: 8px; margin-bottom: 10px; border: 1px solid #e8e8ed;"></div>
+                    <strong>#ffffff</strong><br>
+                    <small>White</small>
+                </div>
+                <div style="text-align: center;">
+                    <div style="width: 100%; height: 100px; background: #0071e3; border-radius: 8px; margin-bottom: 10px;"></div>
+                    <strong>#0071e3</strong><br>
+                    <small>Apple Blue</small>
+                </div>
+                <div style="text-align: center;">
+                    <div style="width: 100%; height: 100px; background: linear-gradient(90deg, #0071e3, #00c3ff); border-radius: 8px; margin-bottom: 10px;"></div>
+                    <strong>Gradient</strong><br>
+                    <small>Blue to Cyan</small>
+                </div>
+            </div>
+        </div>
+
+        <h3>4.2 การใช้สีอย่างมีกลยุทธ์</h3>
+
+        <div class="comment">
+            <div class="comment-title">🎨 กลยุทธ์การใช้สีของ Apple:</div>
+            <ul>
+                <li><strong>Black (#1d1d1f)</strong> - ใช้กับข้อความหลัก, heading</li>
+                <li><strong>Gray (#86868b)</strong> - ใช้กับข้อความรอง, description</li>
+                <li><strong>Light Gray (#f5f5f7)</strong> - ใช้เป็นพื้นหลัง section สลับกับ white</li>
+                <li><strong>White</strong> - พื้นหลังหลัก</li>
+                <li><strong>Blue (#0071e3)</strong> - ใช้เฉพาะ CTA, links, และจุดสำคัญ</li>
+            </ul>
+        </div>
+
+        <h3>4.3 Color Psychology</h3>
+
+        <div class="do-dont">
+            <div class="do">
+                <h4>ทำไมใช้สีน้อย</h4>
+                <ul>
+                    <li>Focus ไปที่ content ไม่ใช่สี</li>
+                    <li>ดูมีคลาส (high-end)</li>
+                    <li>ไม่กวนสายตา</li>
+                    <li>Blue โดดเด่นขึ้น</li>
+                </ul>
+            </div>
+            <div class="dont">
+                <h4>ผลของการใช้หลายสี</h4>
+                <ul>
+                    <li>สายตาไม่รู้จะไปไหน</li>
+                    <li>ดูเหมือนเว็บถูก</li>
+                    <li>CTA ไม่เด่น</li>
+                    <li>ดู unprofessional</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="comment">
+            <div class="comment-title">💡 Apply กับ InsightX:</div>
+            <p>เราเรียนรู้ว่า:</p>
+            <ul>
+                <li>ใช้สีเทาแทนสีดำทั้งหมด (#1d1d1f แทน #000000) - ดูอ่อนตาขึ้น</li>
+                <li>Blue ใช้เฉพาะปุ่ม CTA และตัวเลขสำคัญ</li>
+                <li>Gradient ใช้เฉพาะ Hero และ highlight - ไม่ใช้เยอะ</li>
+                <li>พื้นหลังสลับ white กับ light gray เพื่อแบ่ง section</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Section 5: Layout & White Space -->
+    <div class="section" id="layout">
+        <h2>5. Layout & White Space</h2>
+
+        <h3>5.1 Grid System</h3>
+
+        <p>Apple ไม่ได้ใช้ 12-column grid แบบ Bootstrap แต่ใช้แบบยืดหยุ่นกว่า</p>
+
+        <div class="code-block">
+<span class="code-comment">/* Apple-style Layout */</span>
+.section-content {
+    max-width: 980px;     <span class="code-comment">/* จำกัดความกว้างเพื่อ readability */</span>
+    margin: 0 auto;       <span class="code-comment">/* กึ่งกลางเสมอ */</span>
+    padding: 0 22px;      <span class="code-comment">/* padding ข้าง 22px (เลขประหลาด แต่ Apple ใช้) */</span>
+}
+
+<span class="code-comment">/* ใช้ CSS Grid แบบง่าย */</span>
+.highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);  <span class="code-comment">/* 2 columns เท่ากัน */</span>
+    gap: 24px;            <span class="code-comment">/* ช่องว่างระหว่าง items */</span>
+}
+        </div>
+
+        <div class="comment">
+            <div class="comment-title">📏 ทำไมใช้ 980px:</div>
+            <p>Apple เลือก 980px เพราะ:</p>
+            <ul>
+                <li>อ่านสบายที่สุดที่ 60-80 ตัวอักษรต่อบรรทัด</li>
+                <li>ไม่กว้างเกิน - มือถือต้องเลื่อนน้อย</li>
+                <li>ไม่แคบเกิน - desktop ใช้พื้นที่ได้ดี</li>
+                <li>Sweet spot สำหรับ content-heavy pages</li>
+            </ul>
+        </div>
+
+        <h3>5.2 Vertical Rhythm</h3>
+
+        <p>ระยะห่างแนวตั้งสำคัญมากใน Apple design</p>
+
+        <div class="example-box">
+            <h4>Spacing Scale ของ Apple:</h4>
+            <table>
+                <tr>
+                    <th>Size</th>
+                    <th>Value</th>
+                    <th>ใช้กับ</th>
+                </tr>
+                <tr>
+                    <td>Extra Small</td>
+                    <td>8px</td>
+                    <td>ระหว่าง icon กับ text</td>
+                </tr>
+                <tr>
+                    <td>Small</td>
+                    <td>16px</td>
+                    <td>ระหว่าง paragraph</td>
+                </tr>
+                <tr>
+                    <td>Medium</td>
+                    <td>24-32px</td>
+                    <td>ระหว่าง heading กับ content</td>
+                </tr>
+                <tr>
+                    <td>Large</td>
+                    <td>40-60px</td>
+                    <td>ระหว่าง subsections</td>
+                </tr>
+                <tr>
+                    <td>Extra Large</td>
+                    <td>80-120px</td>
+                    <td>ระหว่าง major sections</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="comment">
+            <div class="comment-title">🎯 Golden Rule:</div>
+            <p><strong>ยิ่งแยกออกจากกันมาก = ยิ่งไม่เกี่ยวข้องกัน</strong></p>
+            <p>Spacing บอกความสัมพันธ์:</p>
+            <ul>
+                <li>ใกล้กัน (16px) = เกี่ยวข้องกัน</li>
+                <li>ห่างปานกลาง (40px) = เป็นหัวข้อย่อยใหม่</li>
+                <li>ห่างมาก (100px) = เป็น section ใหม่</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Section 6: Copywriting -->
+    <div class="section" id="copywriting">
+        <h2>6. Copywriting Techniques</h2>
+
+        <h3>6.1 Headlines - หัวข้อที่ดี</h3>
+
+        <div class="do-dont">
+            <div class="do">
+                <h4>Apple Style</h4>
+                <p style="font-size: 24px; font-weight: 600; margin-bottom: 8px;">InsightX<br>ลดค่าโฆษณา เพิ่ม Organic Traffic</p>
+                <p><small>✓ สั้น, ชัด, ตรงประเด็น</small></p>
+            </div>
+            <div class="dont">
+                <h4>ทั่วไป</h4>
+                <p style="font-size: 18px; margin-bottom: 8px;">InsightX คือบริษัทที่ให้บริการด้าน SEO และ Digital Marketing ที่จะช่วยให้ธุรกิจของคุณเติบโต</p>
+                <p><small>✗ ยาว, ไม่ชัด, ไม่มี impact</small></p>
+            </div>
+        </div>
+
+        <h3>6.2 Formula ที่ Apple ใช้</h3>
+
+        <div class="example-box">
+            <h4>Product/Service Name + Benefit Statement</h4>
+            <p>ตัวอย่าง:</p>
+            <ul>
+                <li><strong>"MacBook Pro. Supercharged by M5."</strong></li>
+                <li><strong>"iPhone 16. Built for Apple Intelligence."</strong></li>
+                <li><strong>"InsightX. ลดค่าโฆษณา เพิ่ม Organic Traffic."</strong></li>
+            </ul>
+        </div>
+
+        <h3>6.3 Body Copy - เนื้อหาหลัก</h3>
+
+        <div class="comment">
+            <div class="comment-title">✍️ กฎของ Apple Copy:</div>
+            <ol>
+                <li><strong>ใช้ประโยคสั้น</strong> - 10-15 คำต่อประโยค</li>
+                <li><strong>Avoid jargon</strong> - พูดให้คนทั่วไปเข้าใจ</li>
+                <li><strong>Focus on benefits</strong> - ไม่ใช่ features</li>
+                <li><strong>Use numbers</strong> - ตัวเลขดึงดูดสายตา</li>
+                <li><strong>Active voice</strong> - ใช้กริยาที่มีพลัง</li>
+            </ol>
+        </div>
+
+        <div class="do-dont">
+            <div class="do">
+                <h4>Apple Way</h4>
+                <p>"เพิ่ม Conversion ได้ถึง <strong>100%</strong> ภายใน <strong>6 เดือน</strong>"</p>
+                <p><small>✓ มีตัวเลข, ชัดเจน, มี impact</small></p>
+            </div>
+            <div class="dont">
+                <h4>ทั่วไป</h4>
+                <p>"เราสามารถช่วยเพิ่ม conversion rate ของคุณได้อย่างมากหลังจากที่ทำ SEO ไปสักระยะหนึ่ง"</p>
+                <p><small>✗ คลุมเครือ, ไม่มีตัวเลข, ไม่ชัด</small></p>
+            </div>
+        </div>
+
+        <h3>6.4 Call-to-Action (CTA)</h3>
+
+        <div class="example-box">
+            <h4>Apple's CTA Strategy:</h4>
+            <table>
+                <tr>
+                    <th>Type</th>
+                    <th>Text</th>
+                    <th>Style</th>
+                </tr>
+                <tr>
+                    <td>Primary CTA</td>
+                    <td>"Buy" / "เริ่มต้นเลย"</td>
+                    <td>สีน้ำเงิน, ปุ่มเด่น</td>
+                </tr>
+                <tr>
+                    <td>Secondary CTA</td>
+                    <td>"Learn more" / "ดูเพิ่มเติม"</td>
+                    <td>สีน้ำเงิน, แต่ไม่มีพื้นหลัง</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="comment">
+            <div class="comment-title">💡 CTA Best Practices:</div>
+            <ul>
+                <li><strong>ใช้กริยา</strong> - "เริ่มต้น", "ดู", "ซื้อ" (ไม่ใช่ "คลิกที่นี่")</li>
+                <li><strong>สั้นกระชับ</strong> - 1-3 คำ</li>
+                <li><strong>ชัดเจน</strong> - รู้ว่าจะได้อะไร</li>
+                <li><strong>เด่นชัด</strong> - สีตัดกับพื้นหลัง</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Section 7: Animations -->
+    <div class="section" id="animations">
+        <h2>7. Animations & Interactions</h2>
+
+        <h3>7.1 Scroll Animations</h3>
+
+        <p>Apple ใช้ scroll animations แบบ subtle มาก - ไม่ฉูดฉาด</p>
+
+        <div class="code-block">
+<span class="code-comment">/* Intersection Observer - เทคนิคหลักของ Apple */</span>
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            <span class="code-comment">// เมื่อ element เข้ามาในหน้าจอ</span>
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+            <span class="code-comment">// แล้วหยุด observe เพื่อประหยัด performance</span>
+            observer.unobserve(entry.target);
+        }
+    });
+}, {
+    threshold: 0.1,  <span class="code-comment">// trigger เมื่อเห็น 10% ของ element</span>
+});
+        </div>
+
+        <h3>7.2 Hover Effects</h3>
+
+        <div class="code-block">
+<span class="code-comment">/* Apple-style hover - subtle มาก */</span>
+.card {
+    transition: all 0.3s ease;  <span class="code-comment">/* 0.3s = มาตรฐานของ Apple */</span>
+}
+
+.card:hover {
+    transform: translateY(-4px);  <span class="code-comment">/* ยกขึ้นเล็กน้อย 4px เท่านั้น */</span>
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);  <span class="code-comment">/* เงาเบาๆ */</span>
+}
+
+<span class="code-comment">/* DON'T DO THIS - เกินไป */</span>
+.card-bad:hover {
+    transform: scale(1.2) rotate(5deg);  <span class="code-comment">/* ✗ มากเกินไป! */</span>
+}
+        </div>
+
+        <div class="comment">
+            <div class="comment-title">⏱️ Timing ของ Apple:</div>
+            <ul>
+                <li><strong>0.3s</strong> - hover effects, button clicks</li>
+                <li><strong>0.5s-0.8s</strong> - scroll animations</li>
+                <li><strong>1.5s-2s</strong> - counter animations</li>
+            </ul>
+            <p>กฎทอง: <strong>ยิ่งสั้น ยิ่งรู้สึกว่าเร็ว</strong> - เว็บดูตอบสนองทันใจ</p>
+        </div>
+
+        <h3>7.3 Easing Functions</h3>
+
+        <div class="code-block">
+<span class="code-comment">/* Apple ใช้ ease มากที่สุด */</span>
+transition: all 0.3s ease;
+
+<span class="code-comment">/* หรือ cubic-bezier สำหรับการควบคุมที่ละเอียด */</span>
+transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+<span class="code-comment">/* ไม่ค่อยใช้ */</span>
+transition: all 0.3s linear;  <span class="code-comment">/* ✗ ดูแข็งทื่อ */</span>
+transition: all 0.3s ease-in-out;  <span class="code-comment">/* ใช้ได้ แต่ ease ดีกว่า */</span>
+        </div>
+    </div>
+
+    <!-- Section 8: Code Examples -->
+    <div class="section" id="code-examples">
+        <h2>8. ตัวอย่างโค้ดพร้อม Comments</h2>
+
+        <h3>8.1 Hero Section Structure</h3>
+
+        <div class="code-block">
+&lt;!-- Hero Section - Apple Style --&gt;
+&lt;section class="hero"&gt;
+    &lt;div class="hero-content"&gt;
+        <span class="code-comment">&lt;!-- Eyebrow text - ข้อความเล็กๆ ด้านบน --&gt;</span>
+        &lt;p class="hero-eyebrow"&gt;SEO Solutions&lt;/p&gt;
+
+        <span class="code-comment">&lt;!-- Main title - ใหญ่ที่สุด มี gradient --&gt;</span>
+        &lt;h1 class="hero-title"&gt;
+            InsightX&lt;br&gt;
+            &lt;span class="hero-subtitle"&gt;ลดค่าโฆษณา เพิ่ม Organic Traffic&lt;/span&gt;
+        &lt;/h1&gt;
+
+        <span class="code-comment">&lt;!-- Description - อธิบายเพิ่มเติม --&gt;</span>
+        &lt;p class="hero-description"&gt;
+            ผลลัพธ์ที่วัดได้จริง ด้วยกลยุทธ์ SEO แบบ White Hat
+        &lt;/p&gt;
+
+        <span class="code-comment">&lt;!-- CTAs - 2 ปุ่ม Primary + Secondary --&gt;</span>
+        &lt;div class="hero-cta"&gt;
+            &lt;a href="#contact" class="btn-primary"&gt;เริ่มต้นเลย&lt;/a&gt;
+            &lt;a href="#performance" class="btn-secondary"&gt;ดูผลงาน&lt;/a&gt;
+        &lt;/div&gt;
+
+        <span class="code-comment">&lt;!-- Footnote - ข้อมูลเสริมเล็กๆ --&gt;</span>
+        &lt;p class="hero-footnote"&gt;
+            จากการวิเคราะห์ Google Analytics 4
+        &lt;/p&gt;
+    &lt;/div&gt;
+
+    <span class="code-comment">&lt;!-- Hero Visual - รูปภาพใหญ่ --&gt;</span>
+    &lt;div class="hero-visual"&gt;
+        &lt;img src="image.jpg" alt="Dashboard"&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+        </div>
+
+        <div class="comment">
+            <div class="comment-title">🎓 เรียนรู้จาก Structure นี้:</div>
+            <ul>
+                <li><strong>Eyebrow → Title → Description → CTA → Footnote</strong> - ลำดับที่ชัดเจน</li>
+                <li>มี Visual แยกออกมา - ไม่ปนกับ text</li>
+                <li>ใช้ semantic HTML (&lt;section&gt;, &lt;h1&gt;, &lt;p&gt;)</li>
+                <li>แต่ละส่วนมี class เฉพาะ - style ได้ง่าย</li>
+            </ul>
+        </div>
+
+        <h3>8.2 CSS - Complete Example</h3>
+
+        <div class="code-block">
+<span class="code-comment">/* ========== Apple-Style Hero CSS ========== */</span>
+
+<span class="code-comment">/* Section Container */</span>
+.hero {
+    padding: 100px 0 60px;  <span class="code-comment">/* padding มาก = white space เยอะ */</span>
+    text-align: center;     <span class="code-comment">/* ทุกอย่างกึ่งกลาง */</span>
+}
+
+<span class="code-comment">/* Content Wrapper */</span>
+.hero-content {
+    max-width: 980px;       <span class="code-comment">/* จำกัดความกว้าง */</span>
+    margin: 0 auto;         <span class="code-comment">/* กึ่งกลาง */</span>
+    padding: 0 22px;        <span class="code-comment">/* padding ข้าง */</span>
+}
+
+<span class="code-comment">/* Eyebrow Text */</span>
+.hero-eyebrow {
+    font-size: 17px;
+    font-weight: 600;
+    color: #1d1d1f;
+    margin-bottom: 6px;
+}
+
+<span class="code-comment">/* Main Title */</span>
+.hero-title {
+    font-size: 56px;        <span class="code-comment">/* ใหญ่มาก! */</span>
+    line-height: 1.07;      <span class="code-comment">/* line-height เล็ก = กระชับ */</span>
+    font-weight: 600;       <span class="code-comment">/* ไม่หนักมาก (ไม่ใช่ 700 หรือ 800) */</span>
+    letter-spacing: -0.005em;  <span class="code-comment">/* spacing ลบ = ชิดกัน */</span>
+    margin-bottom: 8px;
+}
+
+<span class="code-comment">/* Gradient Text */</span>
+.hero-subtitle {
+    background: linear-gradient(90deg, #0071e3, #00c3ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    <span class="code-comment">/* เทคนิคนี้ทำให้ text มีสี gradient */</span>
+}
+
+<span class="code-comment">/* Description */</span>
+.hero-description {
+    font-size: 21px;        <span class="code-comment">/* ใหญ่กว่าปกติ */</span>
+    line-height: 1.38;      <span class="code-comment">/* line-height มาก = อ่านง่าย */</span>
+    color: #86868b;         <span class="code-comment">/* สีเทา = ความสำคัญรอง */</span>
+    margin: 16px auto 24px;
+    max-width: 700px;       <span class="code-comment">/* จำกัดความกว้างอีกทีสำหรับ readability */</span>
+}
+
+<span class="code-comment">/* CTA Buttons */</span>
+.btn-primary {
+    background: #0071e3;
+    color: #ffffff;
+    padding: 12px 22px;
+    border-radius: 980px;   <span class="code-comment">/* เลขใหญ่มาก = มน100% */</span>
+    font-size: 17px;
+    transition: all 0.3s ease;  <span class="code-comment">/* smooth transition */</span>
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-primary:hover {
+    background: #0077ed;    <span class="code-comment">/* สีเข้มขึ้นนิดนึง */</span>
+}
+        </div>
+
+        <div class="comment">
+            <div class="comment-title">💡 Key Takeaways:</div>
+            <ul>
+                <li><strong>Padding มากๆ</strong> - 100px top padding สร้าง white space</li>
+                <li><strong>max-width ซ้อนกัน</strong> - 980px แล้วก็ 700px ใน description</li>
+                <li><strong>เลข specific</strong> - 17px, 21px, 56px ไม่ใช่เลขกลมๆ</li>
+                <li><strong>line-height</strong> - แต่ละขนาดมี line-height เฉพาะ</li>
+            </ul>
+        </div>
+
+        <h3>8.3 JavaScript - Scroll Animation</h3>
+
+        <div class="code-block">
+<span class="code-comment">// ========== Intersection Observer - Apple Style ========== //</span>
+
+<span class="code-comment">// Set up observer options</span>
+const observerOptions = {
+    threshold: 0.1,     <span class="code-comment">// Trigger เมื่อเห็น 10% ของ element</span>
+    rootMargin: '0px 0px -100px 0px'  <span class="code-comment">// Trigger ก่อน 100px</span>
+};
+
+<span class="code-comment">// Create observer</span>
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            <span class="code-comment">// Element เข้ามาในหน้าจอแล้ว</span>
+
+            <span class="code-comment">// เริ่มต้นที่ opacity 0 และ move down 30px</span>
+            entry.target.style.opacity = '0';
+            entry.target.style.transform = 'translateY(30px)';
+
+            <span class="code-comment">// หลังจาก 100ms เริ่ม animate</span>
+            setTimeout(() => {
+                entry.target.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }, 100);
+
+            <span class="code-comment">// หยุด observe เพื่อประหยัด performance</span>
+            observer.unobserve(entry.target);
+        }
+    });
+}, observerOptions);
+
+<span class="code-comment">// Observe elements</span>
+document.querySelectorAll('.card, .section').forEach(element => {
+    observer.observe(element);
+});
+        </div>
+
+        <div class="comment">
+            <div class="comment-title">🎯 ทำไมใช้เทคนิคนี้:</div>
+            <ul>
+                <li><strong>Performance ดี</strong> - ไม่ต้อง listen scroll event</li>
+                <li><strong>Unobserve</strong> - animate แล้วหยุด ประหยัด memory</li>
+                <li><strong>Threshold 0.1</strong> - animation เริ่มเร็ว ไม่ต้องเลื่อนมาก</li>
+                <li><strong>setTimeout 100ms</strong> - ให้เวลาตั้งค่าเริ่มต้นก่อน animate</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Section 9: UX Patterns -->
+    <div class="section" id="ux-patterns">
+        <h2>9. UX Patterns ที่เด็ด</h2>
+
+        <h3>9.1 Scroll Storytelling</h3>
+
+        <p>Apple ใช้ vertical scroll เล่าเรื่อง - แต่ละ section คือ chapter</p>
+
+        <div class="example-box">
+            <h4>Structure ของหน้า Apple:</h4>
+            <ol>
+                <li><strong>Hero</strong> - แนะนำสินค้า (Hook)</li>
+                <li><strong>Highlights</strong> - feature สำคัญ 3-5 อย่าง (Overview)</li>
+                <li><strong>Performance</strong> - แสดงพลัง (Impress)</li>
+                <li><strong>Features Detail</strong> - อธิบายแต่ละ feature (Educate)</li>
+                <li><strong>Comparison</strong> - เทียบรุ่นต่างๆ (Help Decide)</li>
+                <li><strong>CTA</strong> - เรียกซื้อ (Convert)</li>
+            </ol>
+        </div>
+
+        <div class="comment">
+            <div class="comment-title">📖 Storytelling Framework:</div>
+            <p><strong>Hook → Overview → Impress → Educate → Compare → Convert</strong></p>
+            <p>Apply กับ InsightX:</p>
+            <ul>
+                <li><strong>Hook</strong>: "ลดค่าโฆษณา" (pain point)</li>
+                <li><strong>Overview</strong>: 4 จุดเด่น</li>
+                <li><strong>Impress</strong>: "100% increase"</li>
+                <li><strong>Educate</strong>: 4 services อธิบายละเอียด</li>
+                <li><strong>Compare</strong>: Results vs SEM</li>
+                <li><strong>Convert</strong>: "เริ่มต้นใช้งาน"</li>
+            </ul>
+        </div>
+
+        <h3>9.2 Progressive Disclosure</h3>
+
+        <p>แสดงข้อมูลทีละน้อย - ไม่ยัดเยียดทั้งหมดทีเดียว</p>
+
+        <div class="do-dont">
+            <div class="do">
+                <h4>Apple Way</h4>
+                <p>Section 1: ชื่อ + benefit<br>
+                Section 2: รายละเอียดเพิ่ม<br>
+                Section 3: ข้อมูลทางเทคนิค<br>
+                Section 4: Specs เต็ม</p>
+            </div>
+            <div class="dont">
+                <h4>ทั่วไป</h4>
+                <p>ใส่ทุกอย่างในหน้าเดียว:<br>
+                Specs, Features, Benefits, Price,<br>
+                Comparison, Reviews<br>
+                (overwhelming!)</p>
+            </div>
+        </div>
+
+        <h3>9.3 Visual Hierarchy</h3>
+
+        <div class="example-box">
+            <h4>Apple's Visual Hierarchy Levels:</h4>
+            <table>
+                <tr>
+                    <th>Level</th>
+                    <th>Element</th>
+                    <th>Size</th>
+                    <th>Weight</th>
+                    <th>Color</th>
+                </tr>
+                <tr>
+                    <td>1 (สูงสุด)</td>
+                    <td>Hero Title</td>
+                    <td>56px</td>
+                    <td>600</td>
+                    <td>Black/Gradient</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Section Heading</td>
+                    <td>48px</td>
+                    <td>600</td>
+                    <td>Black</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Eyebrow/CTA</td>
+                    <td>17px</td>
+                    <td>600</td>
+                    <td>Black/Blue</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Body Text</td>
+                    <td>21px</td>
+                    <td>400</td>
+                    <td>Gray</td>
+                </tr>
+                <tr>
+                    <td>5 (ต่ำสุด)</td>
+                    <td>Caption</td>
+                    <td>12px</td>
+                    <td>400</td>
+                    <td>Gray</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- Section 10: Responsive Design -->
+    <div class="section" id="responsive">
+        <h2>10. Responsive Design Strategy</h2>
+
+        <h3>10.1 Breakpoints</h3>
+
+        <p>Apple ใช้ breakpoints แบบนี้:</p>
+
+        <div class="code-block">
+<span class="code-comment">/* Desktop First Approach */</span>
+
+<span class="code-comment">/* Large Desktop: > 1068px (default styles) */</span>
+
+<span class="code-comment">/* Small Desktop / Tablet: 734px - 1068px */</span>
+@media (max-width: 1068px) {
+    .hero-title { font-size: 48px; }
+    .feature-section { grid-template-columns: 1fr; }
+}
+
+<span class="code-comment">/* Tablet / Mobile: < 734px */</span>
+@media (max-width: 734px) {
+    .hero-title { font-size: 32px; }
+    .nav-links { display: none; }
+    .highlights-grid { grid-template-columns: 1fr; }
+}
+
+<span class="code-comment">/* Small Mobile: < 375px */</span>
+@media (max-width: 375px) {
+    .hero-title { font-size: 28px; }
+}
+        </div>
+
+        <div class="comment">
+            <div class="comment-title">📱 ทำไมเลือก breakpoints เหล่านี้:</div>
+            <ul>
+                <li><strong>1068px</strong> - iPad Pro landscape (1024px) + padding</li>
+                <li><strong>734px</strong> - iPad portrait (768px) ลบ padding</li>
+                <li><strong>375px</strong> - iPhone standard width</li>
+            </ul>
+            <p>เลขไม่กลมเพราะ Apple คิดจากอุปกรณ์จริงๆ ไม่ใช่เลข bootstrap</p>
+        </div>
+
+        <h3>10.2 Mobile Optimization</h3>
+
+        <div class="example-box">
+            <h4>สิ่งที่เปลี่ยนใน Mobile:</h4>
+            <ul>
+                <li>📄 <strong>Typography</strong>: ลดขนาดลง 40-50%</li>
+                <li>🎨 <strong>Layout</strong>: จาก 2 columns → 1 column</li>
+                <li>📏 <strong>Spacing</strong>: ลดลงจาก 100px → 60px</li>
+                <li>🔍 <strong>Navigation</strong>: ซ่อน nav links เหลือแค่ logo + CTA</li>
+                <li>🖼️ <strong>Images</strong>: Full width แทน limited width</li>
+                <li>👆 <strong>Buttons</strong>: ใหญ่ขึ้น (44px minimum touch target)</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Section 11: Summary -->
+    <div class="section" id="summary">
+        <h2>11. สรุปและการนำไปใช้</h2>
+
+        <h3>11.1 Core Principles (สรุป)</h3>
+
+        <div class="stats-box">
+            <h3>10 สิ่งที่เรียนรู้จาก Apple</h3>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+            <div class="example-box">
+                <h4>1. Minimalism</h4>
+                <p>ลดทุกอย่างจนเหลือแต่สิ่งสำคัญ</p>
+            </div>
+            <div class="example-box">
+                <h4>2. White Space</h4>
+                <p>ใช้พื้นที่ว่างมากๆ อย่างน้อย 2x ของปกติ</p>
+            </div>
+            <div class="example-box">
+                <h4>3. Large Typography</h4>
+                <p>ตัวอักษรใหญ่กว่าปกติ 30-50%</p>
+            </div>
+            <div class="example-box">
+                <h4>4. Limited Colors</h4>
+                <p>ใช้สีไม่เกิน 3-4 สี</p>
+            </div>
+            <div class="example-box">
+                <h4>5. Subtle Animations</h4>
+                <p>Animation เบาๆ 0.3s ease</p>
+            </div>
+            <div class="example-box">
+                <h4>6. Clear Hierarchy</h4>
+                <p>ลำดับความสำคัญชัดเจน</p>
+            </div>
+            <div class="example-box">
+                <h4>7. Quality Images</h4>
+                <p>รูปใหญ่ คมชัด สวยงาม</p>
+            </div>
+            <div class="example-box">
+                <h4>8. Short Copy</h4>
+                <p>ข้อความสั้น ชัด ตรงประเด็น</p>
+            </div>
+            <div class="example-box">
+                <h4>9. Consistency</h4>
+                <p>ทุกอย่างสอดคล้องกันทั้งระบบ</p>
+            </div>
+            <div class="example-box">
+                <h4>10. User-First</h4>
+                <p>คิดจากมุมผู้ใช้เป็นหลัก</p>
+            </div>
+        </div>
+
+        <h3>11.2 Checklist สำหรับทุกโปรเจกต์</h3>
+
+        <div class="example-box">
+            <h4>✓ ก่อนเผยแพร่เว็บไซต์ ตรวจสอบสิ่งเหล่านี้:</h4>
+            <ul>
+                <li>☐ มี white space มากพอไหม? (padding อย่างน้อย 80px)</li>
+                <li>☐ ตัวอักษรอ่านง่ายไหม? (font size อย่างน้อย 16px)</li>
+                <li>☐ Hierarchy ชัดเจนไหม? (ขนาดแตกต่างกันชัด)</li>
+                <li>☐ สีใช้น้อยพอไหม? (ไม่เกิน 4 สี)</li>
+                <li>☐ Animation smooth ไหม? (0.3s ease)</li>
+                <li>☐ Mobile responsive ไหม? (ทดสอบบนมือถือ)</li>
+                <li>☐ CTA เด่นไหม? (สีตัดกับพื้นหลัง)</li>
+                <li>☐ รูปภาพคมชัดไหม? (high quality)</li>
+                <li>☐ โหลดเร็วไหม? (< 3 วินาที)</li>
+                <li>☐ ทดสอบบน browser ต่างๆ แล้วไหม?</li>
+            </ul>
+        </div>
+
+        <h3>11.3 การนำไปใช้กับ InsightX</h3>
+
+        <div class="comment">
+            <div class="comment-title">🎯 สิ่งที่เราทำได้แล้ว:</div>
+            <ul>
+                <li>✓ สร้างเว็บไซต์ที่เรียนรู้จาก Apple</li>
+                <li>✓ ใช้เนื้อหาของ InsightX (ไม่ copy Apple)</li>
+                <li>✓ เข้าใจหลักการออกแบบ</li>
+                <li>✓ มี code examples ที่ใช้งานได้จริง</li>
+                <li>✓ รู้ว่าแต่ละเทคนิคทำไมถึงใช้</li>
+            </ul>
+        </div>
+
+        <div class="comment">
+            <div class="comment-title">🚀 Next Steps:</div>
+            <ol>
+                <li>ศึกษาเอกสารนี้ซ้ำๆ</li>
+                <li>ลองปรับแต่งโค้ดเอง</li>
+                <li>Apply กับโปรเจกต์อื่นๆ</li>
+                <li>ศึกษาเว็บไซต์ของ Apple เวอร์ชันใหม่ๆ</li>
+                <li>Practice makes perfect!</li>
+            </ol>
+        </div>
+
+        <div class="stats-box">
+            <h3>🎓 จบการเรียนรู้</h3>
+            <p>ขอบคุณที่อ่านจนจบ!<br>นำความรู้ไปใช้ให้เป็นประโยชน์นะครับ</p>
+        </div>
+    </div>
+
+    <!-- Footer Note -->
+    <div class="footer-note">
+        <p><strong>📄 เอกสารนี้สร้างขึ้นเพื่อการศึกษา</strong></p>
+        <p>วิเคราะห์และเรียนรู้จากการออกแบบของ Apple<br>
+        สำหรับโปรเจกต์ InsightX - SEO & Digital Marketing Solutions</p>
+        <p>Created: December 2024<br>
+        สามารถพิมพ์เป็น PDF ได้โดยใช้ Print function ของ browser</p>
+        <p style="margin-top: 20px; font-style: italic;">
+            "Good design is obvious. Great design is transparent." - Joe Sparano
+        </p>
+    </div>
+
+</body>
+</html>

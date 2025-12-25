@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wireframe Guide - InsightX</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.8;
+            color: #2c3e50;
+            background: #f8f9fa;
+        }
+
+        .guide-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header */
+        .guide-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 60px;
+            text-align: center;
+        }
+
+        .guide-header h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+
+        .guide-header p {
+            font-size: 20px;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        /* Content */
+        .guide-content {
+            padding: 60px;
+        }
+
+        h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin: 60px 0 24px 0;
+            color: #1a1a1a;
+            padding-bottom: 12px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        h2:first-child {
+            margin-top: 0;
+        }
+
+        h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin: 40px 0 16px 0;
+            color: #2c3e50;
+        }
+
+        p {
+            margin-bottom: 16px;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        /* Lists */
+        ul, ol {
+            margin: 20px 0 20px 24px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        /* Info Box */
+        .info-box {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 24px;
+            margin: 24px 0;
+            border-radius: 4px;
+        }
+
+        .info-box h4 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #1976d2;
+        }
+
+        .info-box p {
+            margin-bottom: 8px;
+        }
+
+        .info-box ul {
+            margin-left: 20px;
+        }
+
+        /* Warning Box */
+        .warning-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 24px;
+            margin: 24px 0;
+            border-radius: 4px;
+        }
+
+        .warning-box h4 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #f57c00;
+        }
+
+        /* Success Box */
+        .success-box {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 24px;
+            margin: 24px 0;
+            border-radius: 4px;
+        }
+
+        .success-box h4 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #155724;
+        }
+
+        /* Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+            font-size: 15px;
+        }
+
+        th {
+            background: #667eea;
+            color: white;
+            padding: 16px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 16px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        tr:hover {
+            background: #f5f5f5;
+        }
+
+        /* Code */
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            color: #d63384;
+        }
+
+        /* Footer */
+        .guide-footer {
+            background: #2c3e50;
+            color: white;
+            padding: 40px 60px;
+            text-align: center;
+        }
+
+        .guide-footer p {
+            margin: 0;
+            opacity: 0.9;
+        }
+
+        /* Emoji */
+        .emoji {
+            font-size: 24px;
+            margin-right: 8px;
+        }
+
+        /* Section Numbers */
+        .section-number {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 36px;
+            font-weight: 700;
+            margin-right: 12px;
+            font-size: 18px;
+        }
+
+        /* Spacing Grid */
+        .spacing-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 24px 0;
+        }
+
+        .spacing-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border: 2px solid #e0e0e0;
+        }
+
+        .spacing-item strong {
+            display: block;
+            color: #667eea;
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="guide-container">
+        <!-- Header -->
+        <div class="guide-header">
+            <h1>📐 Wireframe Guide</h1>
+            <p>คู่มือการใช้งาน Wireframe สำหรับ InsightX Website</p>
+        </div>
+
+        <!-- Content -->
+        <div class="guide-content">
+
+            <h2><span class="section-number">1</span>Wireframe คืออะไร?</h2>
+
+            <p>
+                <strong>Wireframe</strong> คือแบบร่างหน้าเว็บไซต์ที่แสดงโครงสร้างและการจัดวางองค์ประกอบต่างๆ
+                โดยไม่เน้นรายละเอียดด้านการออกแบบ (สี, ฟอนต์, รูปภาพ) แต่เน้นที่ <strong>Layout</strong>,
+                <strong>Hierarchy</strong>, และ <strong>User Flow</strong>
+            </p>
+
+            <div class="info-box">
+                <h4>📌 จุดประสงค์ของ Wireframe</h4>
+                <ul>
+                    <li><strong>วางโครงสร้าง:</strong> แสดงให้เห็นว่าแต่ละส่วนของเว็บไซต์จะอยู่ตรงไหน</li>
+                    <li><strong>ลำดับความสำคัญ:</strong> แสดง Visual Hierarchy ของเนื้อหา</li>
+                    <li><strong>ทดสอบ User Flow:</strong> ช่วยให้เห็นว่าผู้ใช้จะนำทางผ่านเว็บไซต์อย่างไร</li>
+                    <li><strong>ประหยัดเวลา:</strong> แก้ไขโครงสร้างได้ง่ายก่อนเริ่มออกแบบจริง</li>
+                </ul>
+            </div>
+
+            <h2><span class="section-number">2</span>โครงสร้าง 8 ส่วนหลัก</h2>
+
+            <p>เว็บไซต์ InsightX แบ่งออกเป็น 8 sections หลัก ตามหลักการออกแบบแบบ Apple:</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Section</th>
+                        <th>จุดประสงค์</th>
+                        <th>Padding</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>01. Navigation</strong></td>
+                        <td>เมนูนำทาง (Fixed)</td>
+                        <td>44px height</td>
+                    </tr>
+                    <tr>
+                        <td><strong>02. Hero</strong></td>
+                        <td>ดึงดูดความสนใจ, แสดง Value Proposition</td>
+                        <td>100px top/bottom</td>
+                    </tr>
+                    <tr>
+                        <td><strong>03. Highlights</strong></td>
+                        <td>แสดงจุดเด่น 4 ข้อ</td>
+                        <td>80px top/bottom</td>
+                    </tr>
+                    <tr>
+                        <td><strong>04. Performance</strong></td>
+                        <td>แสดงสถิติและผลลัพธ์</td>
+                        <td>100px top/bottom</td>
+                    </tr>
+                    <tr>
+                        <td><strong>05. Features</strong></td>
+                        <td>อธิบาย 4 Service หลัก</td>
+                        <td>100px top/bottom</td>
+                    </tr>
+                    <tr>
+                        <td><strong>06. Results</strong></td>
+                        <td>แสดง Charts และ Data</td>
+                        <td>100px top/bottom</td>
+                    </tr>
+                    <tr>
+                        <td><strong>07. CTA</strong></td>
+                        <td>เชิญชวนให้ติดต่อ</td>
+                        <td>120px top/bottom</td>
+                    </tr>
+                    <tr>
+                        <td><strong>08. Footer</strong></td>
+                        <td>ข้อมูลติดต่อและลิงก์</td>
+                        <td>40px top/bottom</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2><span class="section-number">3</span>รายละเอียดแต่ละ Section</h2>
+
+            <h3>01. Navigation Bar</h3>
+            <div class="info-box">
+                <h4>ข้อมูลเทคนิค</h4>
+                <ul>
+                    <li><strong>Position:</strong> Fixed (ติดด้านบน)</li>
+                    <li><strong>Height:</strong> 44px (มาตรฐาน Apple)</li>
+                    <li><strong>Background:</strong> rgba(255, 255, 255, 0.72) + backdrop-filter blur</li>
+                    <li><strong>Layout:</strong> Flexbox (space-between)</li>
+                    <li><strong>องค์ประกอบ:</strong>
+                        <ul>
+                            <li>Logo (ซ้าย)</li>
+                            <li>Navigation Links (กลาง)</li>
+                            <li>CTA Button (ขวา)</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <h3>02. Hero Section</h3>
+            <div class="info-box">
+                <h4>ข้อมูลเทคนิค</h4>
+                <ul>
+                    <li><strong>Padding:</strong> 100px top, 60px bottom</li>
+                    <li><strong>Text Alignment:</strong> Center</li>
+                    <li><strong>Typography Hierarchy:</strong>
+                        <ul>
+                            <li>Eyebrow: 17px (แนะนำบริการ)</li>
+                            <li>Title: 56px (ใหญ่ที่สุด, น้ำหนักมาก)</li>
+                            <li>Subtitle: 56px (สี gradient)</li>
+                            <li>Description: 21px (อธิบายรายละเอียด)</li>
+                        </ul>
+                    </li>
+                    <li><strong>CTA Buttons:</strong> 2 ปุ่ม (Primary + Secondary)</li>
+                    <li><strong>Visual:</strong> Hero Image ขนาดใหญ่ (1200 x 500px) ด้านล่าง</li>
+                </ul>
+            </div>
+
+            <div class="warning-box">
+                <h4>⚠️ สิ่งที่ต้องระวัง</h4>
+                <p>Hero Section เป็นส่วนแรกที่ผู้ใช้เห็น ต้อง:</p>
+                <ul>
+                    <li>มี <strong>Clear Value Proposition</strong> (ได้อะไรจากการใช้บริการ)</li>
+                    <li>มี <strong>Clear CTA</strong> (รู้ว่าต้องทำอะไรต่อ)</li>
+                    <li>ใช้ <strong>White Space</strong> เยอะ (ไม่แน่น)</li>
+                </ul>
+            </div>
+
+            <h3>03. Highlights Grid</h3>
+            <div class="info-box">
+                <h4>ข้อมูลเทคนิค</h4>
+                <ul>
+                    <li><strong>Background:</strong> Light Gray (#f5f5f7)</li>
+                    <li><strong>Layout:</strong> CSS Grid (2 columns)</li>
+                    <li><strong>Gap:</strong> 24px</li>
+                    <li><strong>Card Structure:</strong>
+                        <ul>
+                            <li>Icon (48px)</li>
+                            <li>Title (24px)</li>
+                            <li>Description (17px)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Interaction:</strong> Hover transform (translateY -4px)</li>
+                </ul>
+            </div>
+
+            <h3>04. Performance Stats</h3>
+            <div class="info-box">
+                <h4>ข้อมูลเทคนิค</h4>
+                <ul>
+                    <li><strong>Padding:</strong> 100px top/bottom</li>
+                    <li><strong>Stats Layout:</strong> Flexbox (horizontal, center)</li>
+                    <li><strong>Gap:</strong> 60px ระหว่าง stats</li>
+                    <li><strong>Stat Components:</strong>
+                        <ul>
+                            <li>Number: 80px (gradient text, counter animation)</li>
+                            <li>Label: 24px</li>
+                            <li>Description: 17px</li>
+                        </ul>
+                    </li>
+                    <li><strong>Image:</strong> Performance visual ด้านล่าง (1200 x 600px)</li>
+                </ul>
+            </div>
+
+            <div class="success-box">
+                <h4>✅ Best Practice</h4>
+                <p>ใช้ตัวเลขจริงจาก Google Analytics เพื่อ:</p>
+                <ul>
+                    <li>สร้างความน่าเชื่อถือ</li>
+                    <li>แสดงผลลัพธ์ที่วัดได้</li>
+                    <li>โดดเด่นกว่าคู่แข่งที่ใช้ตัวเลขเกินจริง</li>
+                </ul>
+            </div>
+
+            <h3>05. Features Section</h3>
+            <div class="info-box">
+                <h4>ข้อมูลเทคนิค</h4>
+                <ul>
+                    <li><strong>Background:</strong> Light Gray (#f5f5f7)</li>
+                    <li><strong>Layout:</strong> CSS Grid (2 columns, 1fr 1fr)</li>
+                    <li><strong>Gap:</strong> 80px</li>
+                    <li><strong>Pattern:</strong> สลับซ้าย-ขวา (Text-Image, Image-Text)</li>
+                    <li><strong>Spacing:</strong> 80px ระหว่างแต่ละ feature</li>
+                    <li><strong>Content Structure:</strong>
+                        <ul>
+                            <li>Feature Title: 40px</li>
+                            <li>Feature Description: 21px</li>
+                            <li>Feature Image: 800 x 300px</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <h3>06. Results with Charts</h3>
+            <div class="info-box">
+                <h4>ข้อมูลเทคนิค</h4>
+                <ul>
+                    <li><strong>Background:</strong> White</li>
+                    <li><strong>Layout:</strong> CSS Grid (2 columns)</li>
+                    <li><strong>Gap:</strong> 40px</li>
+                    <li><strong>Card Components:</strong>
+                        <ul>
+                            <li>Chart (Bar หรือ Line)</li>
+                            <li>Result Title: 28px</li>
+                            <li>Description: 17px</li>
+                            <li>Stat Number: 32px (gradient)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Animation:</strong> Chart bars animate on scroll</li>
+                </ul>
+            </div>
+
+            <h3>07. CTA (Call to Action)</h3>
+            <div class="info-box">
+                <h4>ข้อมูลเทคนิค</h4>
+                <ul>
+                    <li><strong>Background:</strong> Light Gray (#f5f5f7)</li>
+                    <li><strong>Padding:</strong> 120px top/bottom (มากที่สุด)</li>
+                    <li><strong>Text Alignment:</strong> Center</li>
+                    <li><strong>Typography:</strong>
+                        <ul>
+                            <li>Title: 48px</li>
+                            <li>Description: 21px</li>
+                        </ul>
+                    </li>
+                    <li><strong>Buttons:</strong> Large size (16px 32px padding, 19px font)</li>
+                </ul>
+            </div>
+
+            <div class="warning-box">
+                <h4>⚠️ CTA Best Practices</h4>
+                <ul>
+                    <li>ใช้คำกระตุ้น action ที่ชัดเจน (เริ่มต้นใช้งาน, ปรึกษาฟรี)</li>
+                    <li>แสดงให้เห็นว่าไม่มีความเสี่ยง (ฟรี, ไม่มีค่าใช้จ่าย)</li>
+                    <li>มี 2 options: Primary (สนใจสูง) และ Secondary (ดูข้อมูลเพิ่ม)</li>
+                </ul>
+            </div>
+
+            <h3>08. Footer</h3>
+            <div class="info-box">
+                <h4>ข้อมูลเทคนิค</h4>
+                <ul>
+                    <li><strong>Background:</strong> Light Gray (#f5f5f7)</li>
+                    <li><strong>Padding:</strong> 40px top, 20px bottom</li>
+                    <li><strong>Layout:</strong>
+                        <ul>
+                            <li>Main Grid: 2 columns (1fr 2fr)</li>
+                            <li>Links Grid: 3 columns (1fr 1fr 1fr)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Components:</strong>
+                        <ul>
+                            <li>Logo + Tagline (ซ้าย)</li>
+                            <li>3 Link Columns (ขวา)</li>
+                            <li>Copyright (ล่างสุด)</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <h2><span class="section-number">4</span>Spacing System</h2>
+
+            <p>
+                ระบบ Spacing ที่ใช้ใน wireframe นี้ตามหลักของ Apple คือ <strong>ใช้ white space เยอะ</strong>
+                เพื่อให้เว็บไซต์ดูสะอาด ไม่แน่น และอ่านง่าย
+            </p>
+
+            <div class="spacing-grid">
+                <div class="spacing-item">
+                    <strong>Section Padding</strong>
+                    <p>80px - 120px ระหว่าง sections ใหญ่</p>
+                </div>
+                <div class="spacing-item">
+                    <strong>Element Gap</strong>
+                    <p>24px - 80px ระหว่าง elements</p>
+                </div>
+                <div class="spacing-item">
+                    <strong>Content Max-Width</strong>
+                    <p>980px สำหรับ content หลัก</p>
+                </div>
+                <div class="spacing-item">
+                    <strong>Side Padding</strong>
+                    <p>22px ซ้าย-ขวา (mobile: 16px)</p>
+                </div>
+            </div>
+
+            <h2><span class="section-number">5</span>Responsive Design</h2>
+
+            <p>
+                Wireframe นี้รองรับทั้ง <strong>Desktop</strong> และ <strong>Mobile</strong> view
+                โดยสามารถสลับดูได้จากปุ่มด้านขวาบน
+            </p>
+
+            <h3>Breakpoints</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Breakpoint</th>
+                        <th>Width</th>
+                        <th>การเปลี่ยนแปลง</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Desktop</strong></td>
+                        <td>&gt; 1068px</td>
+                        <td>แสดงครบทุก element</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tablet</strong></td>
+                        <td>734px - 1068px</td>
+                        <td>Features เป็น 1 column, Stats เป็น column</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Mobile</strong></td>
+                        <td>&lt; 734px</td>
+                        <td>ทุก grid เป็น 1 column, ซ่อนบาง navigation links</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Mobile Adaptations</h3>
+            <ul>
+                <li><strong>Navigation:</strong> ซ่อน nav links (ปกติจะใช้ hamburger menu)</li>
+                <li><strong>Grids:</strong> เปลี่ยนจาก 2-4 columns เป็น 1 column</li>
+                <li><strong>Typography:</strong> ลดขนาด font (Hero 56px → 32px)</li>
+                <li><strong>Spacing:</strong> ลด padding (100px → 60px)</li>
+                <li><strong>Images:</strong> เต็มความกว้าง 100%</li>
+            </ul>
+
+            <h2><span class="section-number">6</span>การใช้งาน Wireframe</h2>
+
+            <div class="success-box">
+                <h4>✅ วิธีใช้งาน</h4>
+                <ol>
+                    <li>เปิดไฟล์ <code>wireframe.html</code> ในเบราว์เซอร์</li>
+                    <li>ดู Desktop view เป็นค่าเริ่มต้น</li>
+                    <li>คลิกปุ่ม <strong>Mobile</strong> ด้านขวาบนเพื่อดู mobile layout</li>
+                    <li>สังเกต annotations (กล่องสีเหลือง) ที่อธิบายรายละเอียด</li>
+                    <li>ดู measurements (สีแดงด้านซ้าย) สำหรับ spacing</li>
+                </ol>
+            </div>
+
+            <h3>สิ่งที่ควรสังเกต</h3>
+            <ul>
+                <li><span class="emoji">📏</span> <strong>Spacing:</strong> ระยะห่างระหว่าง elements</li>
+                <li><span class="emoji">📐</span> <strong>Proportions:</strong> อัตราส่วนของแต่ละส่วน</li>
+                <li><span class="emoji">🎯</span> <strong>Hierarchy:</strong> ลำดับความสำคัญของเนื้อหา</li>
+                <li><span class="emoji">🔄</span> <strong>Flow:</strong> การไหลของสายตาผู้ใช้</li>
+                <li><span class="emoji">📱</span> <strong>Responsive:</strong> การปรับตัวบน mobile</li>
+            </ul>
+
+            <h2><span class="section-number">7</span>จาก Wireframe สู่ Design</h2>
+
+            <p>หลังจากได้ wireframe แล้ว ขั้นตอนต่อไปคือ:</p>
+
+            <ol>
+                <li>
+                    <strong>Design Mockup:</strong>
+                    <ul>
+                        <li>เพิ่มสี ตามหลัก Apple (Black, Gray, Blue)</li>
+                        <li>เลือก Typography (Inter font)</li>
+                        <li>เพิ่มรูปภาพจริง (Unsplash)</li>
+                        <li>ออกแบบ micro-interactions</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Prototype:</strong>
+                    <ul>
+                        <li>เพิ่ม animations (scroll, hover)</li>
+                        <li>ทดสอบ user flow</li>
+                        <li>รับ feedback จาก users</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Development:</strong>
+                    <ul>
+                        <li>เขียน HTML/CSS ตาม wireframe</li>
+                        <li>เพิ่ม JavaScript สำหรับ interactions</li>
+                        <li>ทำ responsive design</li>
+                        <li>ทดสอบบน browsers และ devices ต่างๆ</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <h2><span class="section-number">8</span>เปรียบเทียบ Wireframe กับ Design จริง</h2>
+
+            <div class="info-box">
+                <h4>📊 ความแตกต่าง</h4>
+                <table style="margin: 20px 0;">
+                    <thead>
+                        <tr>
+                            <th>Wireframe</th>
+                            <th>Design จริง</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ใช้สี grayscale</td>
+                            <td>ใช้สีจริง (Brand colors)</td>
+                        </tr>
+                        <tr>
+                            <td>กล่อง/placeholder สำหรับ content</td>
+                            <td>เนื้อหาและรูปภาพจริง</td>
+                        </tr>
+                        <tr>
+                            <td>Focus: Structure & Layout</td>
+                            <td>Focus: Visual & Aesthetics</td>
+                        </tr>
+                        <tr>
+                            <td>ไม่มี animations</td>
+                            <td>มี smooth animations</td>
+                        </tr>
+                        <tr>
+                            <td>ทำเร็ว แก้ง่าย</td>
+                            <td>ใช้เวลานาน แก้ยาก</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2><span class="section-number">9</span>Checklist ก่อน Handoff</h2>
+
+            <div class="success-box">
+                <h4>✅ ตรวจสอบก่อนส่งต่อให้ Designer/Developer</h4>
+                <ul>
+                    <li>☐ ครบทุก section (Navigation, Hero, Features, Footer)</li>
+                    <li>☐ แสดง spacing/measurements ชัดเจน</li>
+                    <li>☐ มี annotations อธิบายรายละเอียด</li>
+                    <li>☐ ทดสอบ responsive (Desktop + Mobile)</li>
+                    <li>☐ User flow สมเหตุสมผล</li>
+                    <li>☐ Visual hierarchy ชัดเจน</li>
+                    <li>☐ CTA buttons โดดเด่น</li>
+                    <li>☐ ได้รับ feedback จาก stakeholders</li>
+                </ul>
+            </div>
+
+            <h2><span class="section-number">10</span>Resources</h2>
+
+            <p>ไฟล์ที่เกี่ยวข้อง:</p>
+            <ul>
+                <li><code>wireframe.html</code> - Wireframe หลัก</li>
+                <li><code>wireframe-guide.html</code> - คู่มือนี้</li>
+                <li><code>index.html</code> - Design จริง (Apple-style)</li>
+                <li><code>styles.css</code> - CSS สำหรับ design จริง</li>
+                <li><code>script.js</code> - JavaScript สำหรับ interactions</li>
+                <li><code>Apple-Design-Learning-Guide.html</code> - คู่มือการเรียนรู้ design</li>
+            </ul>
+
+            <div class="info-box">
+                <h4>📚 แหล่งเรียนรู้เพิ่มเติม</h4>
+                <ul>
+                    <li>Apple Human Interface Guidelines</li>
+                    <li>Material Design Guidelines</li>
+                    <li>Laws of UX (lawsofux.com)</li>
+                    <li>Refactoring UI (refactoringui.com)</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <div class="guide-footer">
+            <p>&copy; 2024 InsightX - Wireframe Guide | SEO & Digital Marketing Solutions</p>
+        </div>
+    </div>
+</body>
+</html>
