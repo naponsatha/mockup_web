@@ -311,7 +311,7 @@ body {
     margin-bottom: 8px;
 }
 
-.metric-label {
+.metrics .metric-label {
     font-size: 17px;
     color: rgba(255, 255, 255, 0.9);
     font-weight: 400;
@@ -647,10 +647,10 @@ body {
     margin-bottom: 4px;
 }
 
-.metric-label {
+.portfolio .metric-label {
     display: block;
     font-size: 11px;
-    color: var(--text-gray);
+    color: #000000;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
